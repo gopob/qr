@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="QR Code scanner" />
+    <meta name="keywords" content="qrcode,qr code,scanner,barcode,javascript" />
+    <meta name="language" content="English" />
+    <meta name="copyright" content="Lazar Laszlo (c) 2011" />
+    <meta name="Revisit-After" content="1 Days" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR code кодер и декодер</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="llqrcode.js"></script>
+
+    <script type="text/javascript" src="webqr.js"></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="header">
+        <p id="mp1">
+          Сканер QR Code
+        </p>
+        <ul>
+          <li><a href="index.html">Сканировать QR code</a></li>
+          <li><a href="create.html">Создать QR code</a></li>
+        </ul>
+      </div>
+      <div id="mainbody" style="display: inline;">
+        <table class="tsel" style="border: 0" width="100%">
+          <tbody>
+            <tr>
+              <td
+                style="display: flex; justify-content: center; margin-left:auto; margin-right: auto;"
+                width="50%"
+              >
+                <table class="tsel" style="border: 0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img
+                          class="selector"
+                          id="webcamimg"
+                          src="vid.png"
+                          onclick="setwebcam()"
+                          style="opacity: 1;"
+                        />
+                      </td>
+                      <td>
+                        <img
+                          class="selector"
+                          id="qrimg"
+                          src="cam.png"
+                          onclick="setimg()"
+                          style="opacity: 0.2;"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="text-align: center">
+                        <div id="outdiv">
+                          <video id="v" autoplay=""></video>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align: center">
+                <div id="result">- сканирование -</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="footer"></div>
+    </div>
+    <canvas
+      id="qr-canvas"
+      width="800"
+      height="600"
+      style="width: 800px; height: 600px;"
+    ></canvas>
+    <script type="text/javascript">
+      load();
+    </script>
+  </body>
+</html>
